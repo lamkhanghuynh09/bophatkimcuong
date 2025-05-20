@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đổi Kim Cương</title>
+</head>
+<body>
+  <h2>Đổi Kim Cương</h2>
+  <p>Xu hiện tại: <strong><%= user.coins %></strong></p>
+  <p>Kim cương hiện tại: <strong><%= user.diamonds || 0 %></strong></p>
+
+  <form action="/exchange" method="POST">
+    <label>Nhập số xu muốn đổi (ít nhất 200.000 xu):</label><br>
+    <input type="number" name="amount" min="200000" step="10000" required><br><br>
+    <button type="submit">Đổi Kim Cương</button>
+  </form>
+
+  <% if (message) { %>
+    <p style="color: green;"><%= message %></p>
+  <% } %>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+</body>
+</html>
